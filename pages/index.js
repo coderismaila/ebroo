@@ -1,122 +1,68 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
-import banner from '../public/banner2.png';
+import Image from 'next/image';
+import Header from '../components/Header';
+import ceo from '../public/md_ibro_fura.jpg';
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-hidden'>
       <Head>
         <title>Ebroo Group</title>
       </Head>
-      <header className='relative w-full h-screen'>
-        <div className='absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-r from-[#5E239D] to-[#c4c4c4] mix-blend-multiply'></div>
-        <div className='absolute top-0 left-0 w-full h-full z-0 bg-hero-image'></div>
-        <Image src={banner} alt='' layout='fill' objectFit='cover' />
-        <div className='absolute top-0 left-0 w-full h-full z-0 bg-[#5E239D] mix-blend-multiply'></div>
-        <div className='relative pt-10 mx-auto z-10'>
-          <nav className='relative px-5 md:px-10 lg:px-32 mx-auto flex flex-wrap items-center justify-between text-white text-sm font-bold'>
-            <Link className='font-bol' href='/'>
-              <a className='font-black text-2xl tracking-[0.125em]'>
-                Ebroo Group
-              </a>
-            </Link>
-            <div
-              className='md:hidden cursor-pointer'
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 6h16M4 12h16M4 18h16'
-                />
-              </svg>
-            </div>
-            <div
-              className={`${!isOpen ? 'hidden md:flex' : 'flex'}
-                
-                  absolute top-10 left-0 md:top-auto md:left-auto md:relative w-full bg-[#F61067] md:bg-transparent md:w-auto flex-col md:flex-row items-center justify-between md:justify-center md:space-x-5 space-y-10 md:space-y-0 mt-5 p-10 md:p-0 md:mt-0 tracking-[0.125em]`}
-            >
-              <Link href='/'>
-                <a className='tracking-[0.125em] '>About Us</a>
-              </Link>
-              <Link href='/'>
-                <a className='tracking-[0.125em]'>Businesses</a>
-              </Link>
-              <Link href='/'>
-                <a className='tracking-[0.125em]'>Contact Us</a>
-              </Link>
-              <Link href='/' passHref>
-                <div className='flex items-center cursor-pointer'>
-                  <span>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      className='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
-                      />
-                    </svg>
-                  </span>
-                  <a className='tracking-[0.125em]'>08062132407</a>
+      <Header />
+      <main>
+        <section>
+          <div className='min-h-screen px-5 md:px-10 lg:px-32 mx-auto mt-20'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-20 h-full'>
+              <div className='flex justify-center'>
+                <div>
+                  <h3 className='text-xs text-[#F61067] font-extrabold uppercase tracking-[6px]'>
+                    Intro
+                  </h3>
+                  <h2 className='text-[#30233D] text-[45px] font-medium mt-4'>
+                    Our Vision
+                  </h2>
+                  <p className='text-[18px] text-[#30233D] font-extrabold mt-4'>
+                    Apparently we had reached a great height in the atmosphere,
+                    for the sky was a dead black, and the stars had ceased to
+                    twinkle.
+                  </p>
+                  <p className='text-[18px] text-[#776C82] mt-10'>
+                    By the same illusion which lifts the horizon of the sea to
+                    the level of the spectator on a hillside, the sable cloud
+                    beneath was dished out, and the car seemed to float in the
+                    middle of an immense dark sphere, whose upper half was
+                    strewn with silver.
+                  </p>
+                  <div className='mt-10'>
+                    <Link href='/'>
+                      <a className='text-[13.5px] text-[#FCFCFC] bg-[#F61067] px-10 py-2 rounded-full tracking-[2px]'>
+                        Learn More
+                      </a>
+                    </Link>
+                  </div>
                 </div>
-              </Link>
-            </div>
-          </nav>
-          <div>
-            <div className='mx-5 md:mx-10 lg:mx-32   text-white my-20 items-center justify-center '>
-              <p className='text-sm mb-5 font-extrabold uppercase'>
-                What we do
-              </p>
-              <h1 className='text-5xl sm:text-7xl lg:text-8xl text-white font-extrabold tracking-[0%] leading-[118.8%] '>
-                We grow <br />
-                <span className='text-[#F61067]'>great business</span>
-              </h1>
-            </div>
-            <div className='inline-block items-center border-[1px] border-l-0 border-[#c4c4c4] p-6 pl-0 mr-5'>
-              <div className='flex items-center'>
-                <p className='ml-5 md:ml-32 text-[#fcfcfc] font-normal text-lg'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <div className='w-12 min-w-[3rem] ml-5 h-12 md:ml-9 text-white flex items-center justify-center border-[1px]  rounded-full'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={1}
-                      d='M17 8l4 4m0 0l-4 4m4-4H3'
+              </div>
+              <div className='min-h-screen mt-20 md:mt-0 md:h-full w-full'>
+                <div className='relative h-full w-full'>
+                  <div className='absolute left-56 md:left-60 lg:left-80 z-20 w-full h-4/6 bg-[#30124E]'></div>
+                  <div className='absolute left-44 md:left-52 lg:left-60 z-0 w-full h-4/6 bg-[#30124E]'></div>
+                  <div className='relative top-10 md:top-10 left-0 h-full w-full flex'>
+                    <Image
+                      src={ceo}
+                      layout='fill'
+                      objectFit='contain'
+                      objectPosition='0 0'
+                      alt='ceo'
+                      className='z-10 w-full'
                     />
-                  </svg>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-      <main>
-        <h1>Welcome to Ebroo Group of Companies</h1>
+        </section>
       </main>
       <footer></footer>
     </div>
